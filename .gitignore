@@ -1,0 +1,21 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+dist/
+build/
+*.egg-info/
+
+# Local runtime outputs used in later lessons.
+traces/
+runs/
+reports/
+data/
+
+# Editor/OS noise.
+.DS_Store
+.idea/
+.vscode/

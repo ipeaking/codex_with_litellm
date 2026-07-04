@@ -1,0 +1,10 @@
+# Project-scoped Codex defaults for this course repository.
+#
+# Provider/auth settings should stay in the user's global Codex config.
+# This file only sets local working behavior for the trusted project.
+
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+
+[sandbox_workspace_write]
+network_access = true
