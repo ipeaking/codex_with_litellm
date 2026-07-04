@@ -94,6 +94,7 @@ cp .env.example .env
 
 ```text
 OPENAI_API_KEY=你的 OpenAI API Key
+DEEPSEEK_API_KEY=你的 DeepSeek API Key
 LITELLM_MASTER_KEY=sk-local-dev
 LITELLM_BASE_URL=http://localhost:4000
 ```
@@ -157,6 +158,8 @@ smart   复杂分析、规划
 judge   Eval judge
 code    代码理解和修复
 cheap   批量低成本任务
+deepseek-pro    DeepSeek V4 Pro，可选
+deepseek-flash  DeepSeek V4 Flash，可选
 ```
 
 配置文件：
@@ -164,6 +167,30 @@ cheap   批量低成本任务
 [infra/litellm/config.yaml](infra/litellm/config.yaml)
 
 后续可以修改 alias 背后的真实模型，而不影响业务代码。
+
+如果想调用 DeepSeek V4 Pro，先在 `.env` 中配置：
+
+```text
+DEEPSEEK_API_KEY=你的 DeepSeek API Key
+```
+
+然后重启 LiteLLM：
+
+```bash
+docker compose -f infra/docker-compose.yml restart litellm
+```
+
+再运行：
+
+```bash
+python3 scripts/smoke_ai_client.py --model-profile deepseek-pro
+```
+
+DeepSeek V4 Flash 也已经配置为：
+
+```bash
+python3 scripts/smoke_ai_client.py --model-profile deepseek-flash
+```
 
 ## Internal AI Client
 

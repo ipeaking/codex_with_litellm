@@ -32,6 +32,18 @@ model_list:
       model: openai/gpt-4.1-mini
       api_key: os.environ/OPENAI_API_KEY
 
+  # Optional DeepSeek aliases. To use them, set DEEPSEEK_API_KEY in .env and
+  # call the AI client with --model-profile deepseek-pro or deepseek-flash.
+  - model_name: deepseek-pro
+    litellm_params:
+      model: deepseek/deepseek-v4-pro
+      api_key: os.environ/DEEPSEEK_API_KEY
+
+  - model_name: deepseek-flash
+    litellm_params:
+      model: deepseek/deepseek-v4-flash
+      api_key: os.environ/DEEPSEEK_API_KEY
+
 litellm_settings:
   drop_params: true
   request_timeout: 60

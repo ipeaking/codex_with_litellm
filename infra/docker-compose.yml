@@ -41,6 +41,7 @@ services:
       - ./litellm/config.yaml:/app/config.yaml:ro
     environment:
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
       LITELLM_MASTER_KEY: ${LITELLM_MASTER_KEY:-sk-local-dev}
       DATABASE_URL: postgresql://${POSTGRES_USER:-ai_course}:${POSTGRES_PASSWORD:-ai_course}@postgres:5432/${POSTGRES_DB:-ai_course}
       REDIS_HOST: redis
